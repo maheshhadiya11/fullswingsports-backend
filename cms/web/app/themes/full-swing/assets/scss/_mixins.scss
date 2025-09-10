@@ -1,0 +1,111 @@
+@mixin buttonBase($size: 'default') {
+  text-align: center;
+  border-radius: 0.4rem;
+  background-color: $blue-600 !important;
+  color: $gray-50;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  width: auto;
+  float: unset;
+  height: 4rem;
+  display: flex !important;
+  padding: 1.2rem 1.8rem !important;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+
+  @if ($size == 'default') {
+    @screen md {
+      padding: 2.2rem !important;
+      height: 6.8rem;
+    }
+  }
+
+  @screen md {
+    border-radius: 0.8rem;
+  }
+
+  &:hover {
+    background-color: $blue-950 !important;
+    color: $blue-200;
+  }
+
+  &:visited {
+    background-color: $blue-800 !important;
+  }
+
+  &:focus {
+    background-color: $blue-600 !important;
+    border: 0.2rem solid $blue-200;
+  }
+
+  &:disabled {
+    background-color: $gray-200 !important;
+    color: $gray-50;
+  }
+}
+
+@mixin addToCartButton {
+  text-align: center;
+  border-radius: 0.4rem;
+  background-color: $white !important;
+  color: $gray-950;
+  border: 0.1rem solid $gray-950;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  width: auto;
+  float: unset;
+  height: 4rem;
+  display: flex !important;
+  gap: 0.8rem;
+  padding: 1.2rem 1.8rem !important;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+
+  svg {
+    width: 1.6rem;
+    height: auto;
+    position: relative;
+    bottom: 0.1rem;
+  }
+
+  &:hover {
+    background-color: $blue-950 !important;
+    color: $blue-200;
+
+    &::after {
+      fill: $blue-200;
+    }
+  }
+
+  &:visited {
+    color: $white;
+    background-color: $blue-600 !important;
+  }
+
+  &:focus {
+    background-color: $blue-100 !important;
+    border: 0.2rem solid $blue-500;
+    padding: 1.2rem 1.7rem !important;
+  }
+
+  &:disabled {
+    border-color: $gray-300 !important;
+    color: $gray-300;
+  }
+}
+
+@mixin textLink {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration-line: underline;
+  text-transform: uppercase;
+}

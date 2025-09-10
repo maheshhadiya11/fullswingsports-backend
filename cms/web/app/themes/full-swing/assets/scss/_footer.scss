@@ -1,0 +1,265 @@
+.main-footer {
+  background: $black;
+  color: $gray-50;
+  margin: 8.8rem auto 0;
+  padding-bottom: 4.2rem;
+
+  @screen md {
+    border-radius: 2.4rem;
+    margin-bottom: 2.8rem;
+    margin-top: 7.5rem;
+    width: calc(100% - 5.6rem);
+  }
+
+  @screen xl {
+    margin-bottom: 4.8rem;
+  }
+
+  @screen xxl {
+    width: calc(100% - 10rem);
+  }
+
+  &__inner {
+  }
+
+  hr {
+    background-color: $gray-50;
+    height: 0.1rem;
+    opacity: 0.3;
+  }
+
+  .top-footer {
+    transform: translateY(-8.8rem);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 0.1rem;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    flex-flow: column nowrap;
+    margin: 0 2.4rem;
+
+    @screen md {
+      margin: 0 auto;
+      flex-direction: row;
+      transform: translateY(-7.5rem);
+    }
+
+    @screen xxl {
+      margin: 0 -9.8rem;
+    }
+
+    &__item {
+      background: $blue-600;
+      padding: 2.4rem;
+      height: 100%;
+      width: 100%;
+      &:hover{
+        background: $blue-950;
+      }
+
+      @screen md {
+        width: calc(100% / 3);
+      }
+    }
+
+    .headline {
+      margin: 1.6rem 0;
+
+      @screen md {
+        margin: 0.8rem 0;
+      }
+
+      @screen xl {
+        margin: 1.073rem 0;
+      }
+
+      @screen xxl {
+        margin: 1.6rem 0;
+      }
+    }
+  }
+
+  .quote {
+    margin: 0 2.4rem 6rem;
+
+    @screen md {
+      margin: 0 0 3.2rem;
+    }
+
+    @screen xl {
+      margin-bottom: 4.8rem;
+    }
+
+    @screen xl {
+      margin-bottom: 7.2rem;
+    }
+
+    h2 {
+      @apply headline-h3;
+      position: relative;
+
+      span {
+        display: block;
+        line-height: 1;
+
+        @screen md {
+          position: absolute;
+          left: -1.5rem;
+          top: 0;
+        }
+
+        @screen xl {
+          left: -2.4rem;
+        }
+
+        @screen xxl {
+          left: -3.8rem;
+        }
+      }
+    }
+
+    p {
+      margin: 3.2rem 0 0;
+
+      @screen md {
+        margin-top: 1.6rem;
+      }
+
+      @screen xl {
+        margin-top: 2.4rem;
+      }
+    }
+  }
+
+  .footer-logo,
+  .footer-nav {
+    margin-top: 5.2rem;
+  }
+
+  .footer-nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 2rem;
+    margin-bottom: 5.8rem;
+
+    @screen md {
+      padding-left: 5rem;
+      padding-right: 0;
+      margin-bottom: 3.2rem;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @screen xl {
+      padding-left: 8rem;
+      margin-bottom: 4.8rem;
+      grid-template-columns: 1fr 1fr 2fr;
+    }
+    @screen xxl {
+      margin-bottom: 7.2rem;
+    }
+
+    &__item {
+      &:last-child {
+        grid-column: span 2;
+
+        @screen md {
+          grid-column: span 1;
+        }
+      }
+
+      & > div {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 1.6rem;
+        width: 100%;
+      }
+
+      &.has-socials {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        @screen md {
+          grid-template-columns: 1fr;
+        }
+
+        @screen xl {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .socials {
+          & > div {
+            display: flex;
+            flex-flow: row wrap;
+            gap: 0.4rem;
+          }
+
+          img {
+            height: 2.4rem;
+            width: auto;
+          }
+        }
+      }
+
+      &--sublink {
+      }
+    }
+  }
+
+  .footer-logos {
+    margin: 2.8rem 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.6rem;
+    flex-wrap: wrap;
+
+    @screen md {
+      margin: 2.4rem 0;
+      flex-wrap: nowrap;
+    }
+
+    @screen xl {
+      margin: 4rem 0;
+    }
+  }
+
+  .footer-bottom {
+    margin-top: 4.4rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: $gray-400;
+
+    @screen md {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.6rem;
+    }
+
+    @screen xl {
+      margin-top: 2.4rem;
+    }
+
+    @screen xxl {
+      margin-top: 3.8rem;
+    }
+
+    .legal-links {
+      a {
+        &:not(:last-child) {
+          &::after {
+            content: '|';
+            margin: 0 0.4rem;
+          }
+        }
+      }
+    }
+  }
+
+  
+}

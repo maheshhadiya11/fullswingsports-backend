@@ -1,0 +1,47 @@
+.topbar {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6.2rem;
+  padding: 0 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $white;
+
+  a {
+    color: $gray-950;
+    font-size: 1.4rem;
+    text-align: center;
+    font-weight: 500;
+    line-height: 1.2;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+  }
+}
+
+.main-header {
+  position: sticky;
+  top: 2.4rem;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  &.has-topbar {
+    margin-top: 2.4rem;
+  }
+
+  &__inner {
+    background: $black;
+    padding: 3.2rem 4rem;
+    border-radius: 1.2rem;
+
+    a {
+      img {
+        height: 1.4rem;
+        width: auto;
+      }
+    }
+  }
+}

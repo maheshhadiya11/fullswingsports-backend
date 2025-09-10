@@ -1,0 +1,108 @@
+.woocommerce-page {
+  .woocommerce {
+    .woocommerce-order {
+      @apply body-copy-1;
+
+      .woocommerce-notice {
+        @apply headline-h5;
+
+        margin-bottom: 2.4rem;
+      }
+
+      table.shop_table {
+        border: none;
+        border-collapse: collapse;
+        border-style: hidden;
+
+        strong {
+          .amount {
+            font-weight: 500;
+          }
+        }
+
+        th,
+        td {
+          border-color: $gray-300;
+          padding: 3.2rem;
+        }
+
+        thead {
+          th {
+            @apply caption-label;
+
+            width: 50%;
+          }
+        }
+
+        tbody,
+        tfoot {
+          td:not(.product-name),
+          .product-total {
+            font-size: 1.6rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 1.4;
+          }
+
+          td.product-name {
+            @apply body-copy-1;
+          }
+
+          th {
+            @apply caption-label;
+          }
+        }
+
+        tbody {
+          overflow: hidden;
+          box-shadow: 0 0 0 0.1rem $gray-300;
+          border-radius: 0.8rem 0.8rem 0 0;
+        }
+
+        tfoot {
+          overflow: hidden;
+          box-shadow: 0 0 0 0.1rem $gray-300;
+          border-radius: 0 0 0.8rem 0.8rem;
+          position: relative;
+
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: block;
+            background-color: $white;
+            height: 0.1rem;
+          }
+
+          tr:last-child {
+            th,
+            td {
+              background-color: $black;
+              color: $white;
+              overflow: hidden;
+            }
+
+            th {
+              border-radius: 0 0 0 0.8rem;
+            }
+
+            td {
+              border-radius: 0 0 0.8rem 0;
+            }
+          }
+        }
+
+        .product-name {
+          text-align: left;
+        }
+
+        td:not(.product-name),
+        .product-total {
+          text-align: right;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+// Tailwind
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+// General
+@import 'variables';
+@import 'mixins';
+@import 'font';
+@import 'base';
+@import 'header';
+@import 'footer';
+
+// Woocommerce
+@import 'wc-cart';
+@import 'wc-checkout';
+@import 'wc-notifications';
+@import 'wc-order';
