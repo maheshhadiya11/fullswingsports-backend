@@ -17,4 +17,3 @@
 ## Dev Credentials
 USER: valentin.schreibmaier@pxlp.dev
 PW: development
-test
