@@ -44,7 +44,7 @@ jobs:
           rsync -avz --delete --exclude 'node_modules' -e 'ssh -i deploy_key -o StrictHostKeyChecking=no' ./cms/web/app/themes/full-swing/ $DESTINATION
 
           # Rsync plugins
-          rsync -avz --delete -e 'ssh -i deploy_key -o StrictHostKeyChecking=no' ./cms/web/app/plugins/ $PLUGIN_DESTINATION
+          rsync -avz --delete -e 'ssh -i deploy_key -o StrictHostKeyChecking=no' ./cms/web/app/mu-plugins/ $PLUGIN_DESTINATION
 
           # Reload PHP
           ssh -i deploy_key ploi@3.135.63.128 -t "echo '' | sudo -S service php8.4-fpm reload"
