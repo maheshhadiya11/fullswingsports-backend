@@ -27,24 +27,26 @@ jobs:
           yarn
           yarn build
       
-      # Setup SSH and rsync
+      # Setup SSH and Rsync to remote
       - name: Setup SSH and Rsync to remote
         env:
           DEPLOY_KEY: ${{ secrets.FULLSWINGSPORTSNEW }}
           DESTINATION: ploi@3.135.63.128:/home/ploi/stg.shop.fullswingsports.com/public/wp-content/themes/fullswing
+          PLUGIN_DESTINATION: ploi@3.135.63.128:/home/ploi/stg.shop.fullswingsports.com/public/wp-content/plugins
         run: |
-          # Install ssh client and rsync
           sudo apt-get update
           sudo apt-get install -y ssh rsync
 
-          # Setup the private key
           echo "$DEPLOY_KEY" > deploy_key
           chmod 600 deploy_key
 
-          # Use rsync to sync the build directory excluding node_modules
+          # Rsync theme
           rsync -avz --delete --exclude 'node_modules' -e 'ssh -i deploy_key -o StrictHostKeyChecking=no' ./cms/web/app/themes/full-swing/ $DESTINATION
-          
-          # reload workers
-          ssh -i deploy_key ploi@3.135.63.128 -t "echo "" | sudo -S service php8.4-fpm reload"
-          
+
+          # Rsync plugins
+          rsync -avz --delete -e 'ssh -i deploy_key -o StrictHostKeyChecking=no' ./cms/web/app/plugins/ $PLUGIN_DESTINATION
+
+          # Reload PHP
+          ssh -i deploy_key ploi@3.135.63.128 -t "echo '' | sudo -S service php8.4-fpm reload"
+
           rm -f deploy_key
