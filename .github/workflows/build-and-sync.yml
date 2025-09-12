@@ -3,7 +3,7 @@ name: Build and Rsync to Remote Server
 on:
   push:
     branches:
-      - Development  # Or whichever branch you want this to run on
+      - staging  # Or whichever branch you want this to run on
 
 jobs:
   build-and-sync:
