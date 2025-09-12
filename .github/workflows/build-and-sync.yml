@@ -30,7 +30,7 @@ jobs:
       # Setup SSH and rsync
       - name: Setup SSH and Rsync to remote
         env:
-          DEPLOY_KEY: ${{ secrets.fullswingsportsnew }}
+          DEPLOY_KEY: ${{ secrets.FULLSWINGSPORTSNEW }}
           DESTINATION: ploi@3.135.63.128:/home/ploi/stg.shop.fullswingsports.com/public/wp-content/themes/fullswing
         run: |
           # Install ssh client and rsync
