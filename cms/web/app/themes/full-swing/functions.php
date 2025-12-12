@@ -508,3 +508,6 @@ add_action('init', function() {
     header('Access-Control-Allow-Headers: Content-Type');    
   }
 });
+
+add_filter('wpseo_stylesheet_url','__return_false');
+add_filter('wpseo_stylesheet_url',function() {   return'';});
