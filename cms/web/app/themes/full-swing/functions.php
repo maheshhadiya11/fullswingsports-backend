@@ -501,3 +501,10 @@ function validate_terms_checkbox() {
     }
 }
 
+add_action('init', function() {    
+  if (strpos($_SERVER['REQUEST_URI'], 'sitemap') !== false) {        
+    header('Access-Control-Allow-Origin: https://fullswingsports.com');       
+    header('Access-Control-Allow-Methods: GET');       
+    header('Access-Control-Allow-Headers: Content-Type');    
+  }
+});
