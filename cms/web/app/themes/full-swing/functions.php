@@ -511,3 +511,11 @@ add_action('init', function () {
     header('Access-Control-Allow-Headers: Content-Type');    
   }
 });
+
+add_action('template_redirect', function () {
+    if (isset($_SERVER['REQUEST_URI']) && strpos($_SERVER['REQUEST_URI'], 'sitemap') !== false) {
+        ob_start(function ($xml) {
+            return preg_replace('/<\?xml-stylesheet.*?\?>\s*/', '', $xml);
+        });
+    }
+});
