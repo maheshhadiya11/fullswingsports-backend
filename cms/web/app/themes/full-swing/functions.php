@@ -501,12 +501,23 @@ function validate_terms_checkbox() {
     }
 }
 
-add_action('init', function() {    
-  if (strpos($_SERVER['REQUEST_URI'], 'sitemap') !== false) {        
+add_filter('wpseo_stylesheet_url','__return_false');
+
+add_action('init', function () {
+    if (isset($_SERVER['REQUEST_URI']) && str_contains($_SERVER['REQUEST_URI'], 'sitemap')) {
+        ob_start(function ($xml) {
+            // Replace shop subdomain with main domain instead of removing
+            $xml = str_replace(
+                'https://shop.fullswingsports.com',
+                'https://fullswingsports.com',
+                $xml
+            );
+            return $xml;
+        });
+    }
+    if (strpos($_SERVER['REQUEST_URI'], 'sitemap') !== false) {        
     header('Access-Control-Allow-Origin: https://fullswingsports.com');       
     header('Access-Control-Allow-Methods: GET');       
     header('Access-Control-Allow-Headers: Content-Type');    
   }
 });
-
-add_filter('wpseo_stylesheet_url','__return_false');
