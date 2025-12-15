@@ -512,10 +512,3 @@ add_action('init', function () {
   }
 });
 
-add_action('template_redirect', function () {
-    if (isset($_SERVER['REQUEST_URI']) && strpos($_SERVER['REQUEST_URI'], 'sitemap') !== false) {
-        ob_start(function ($xml) {
-            return preg_replace('/<\?xml-stylesheet.*?\?>\s*/', '', $xml);
-        });
-    }
-});
