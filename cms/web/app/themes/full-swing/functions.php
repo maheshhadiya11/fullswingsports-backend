@@ -510,4 +510,3 @@ add_action('init', function() {
 });
 
 add_filter('wpseo_stylesheet_url','__return_false');
-add_filter('wpseo_stylesheet_url',function() {   return'';});
