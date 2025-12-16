@@ -413,7 +413,7 @@ function add_gtm_body_script()
 {
 ?>
   <!-- Google Tag Manager (noscript) --> 
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-559NZ5C" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-57ZV5NWX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 <?php
 }
@@ -437,7 +437,7 @@ function add_gtm_head_script()
       j.src =
         'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
       f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-559NZ5C');
+    })(window, document, 'script', 'dataLayer', 'GTM-57ZV5NWX');
   </script>
   <!-- End Google Tag Manager -->
 <?php
